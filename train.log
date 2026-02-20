@@ -1,0 +1,46 @@
+Dataset already prepared. Skipping dataset export.
+Found 50 images belonging to 5 classes.
+Found 10 images belonging to 5 classes.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5
+Could not load pretrained VGG19 weights: URL fetch failure on https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5: None -- [Errno 8] nodename nor servname provided, or not known
+Falling back to randomly initialized VGG19 weights for offline training.
+
+Class mapping:
+0: synthetic_breed_1
+1: synthetic_breed_2
+2: synthetic_breed_3
+3: synthetic_breed_4
+4: synthetic_breed_5
+Epoch 1/30
+2026-02-19 22:13:01.850303: W external/local_xla/xla/tsl/platform/profile_utils/cpu_utils.cc:145] Failed to get CPU frequency: 0 Hz
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1771519382.069761 3058157 op_level_cost_estimator.cc:743] Invalid device specifications for CPU: type: "CPU" model: "0" num_cores: 8 environment { key: "cpu_instruction_set" value: "ARM NEON" } environment { key: "eigen" value: "3.4.90" } l1_cache_size: 16384 l2_cache_size: 524288 l3_cache_size: 524288 memory_size: 268435456
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step - accuracy: 0.1562 - loss: 1.6095
+Epoch 1: val_accuracy improved from None to 0.20000, saving model to model/dog_breed_model.h5
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+Epoch 1: finished saving model to model/dog_breed_model.h5
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 3s/step - accuracy: 0.1562 - loss: 1.6095 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 2/30
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step - accuracy: 0.1111 - loss: 1.6095
+Epoch 2: val_accuracy did not improve from 0.20000
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 3s/step - accuracy: 0.1111 - loss: 1.6095 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 3/30
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3s/step - accuracy: 0.1875 - loss: 1.6095
+Epoch 3: val_accuracy did not improve from 0.20000
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 4s/step - accuracy: 0.1875 - loss: 1.6095 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 4/30
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.2222 - loss: 1.6093
+Epoch 4: val_accuracy did not improve from 0.20000
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 2s/step - accuracy: 0.2222 - loss: 1.6093 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 5/30
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3s/step - accuracy: 0.1875 - loss: 1.6096
+Epoch 5: val_accuracy did not improve from 0.20000
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 4s/step - accuracy: 0.1875 - loss: 1.6096 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 6/30
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step - accuracy: 0.2222 - loss: 1.6093
+Epoch 6: val_accuracy did not improve from 0.20000
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 2s/step - accuracy: 0.2222 - loss: 1.6093 - val_accuracy: 0.2000 - val_loss: 1.6094
+Epoch 6: early stopping
+Restoring model weights from the end of the best epoch: 3.
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 

@@ -1,0 +1,10 @@
+tensorflow-macos==2.16.2
+tensorflow-metal==1.2.0
+tensorflow-datasets
+keras
+numpy<2.0
+scipy
+matplotlib
+opencv-python<4.10
+flask
+pillow
