@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Breed Identification</title>
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --primary: #1f6feb;
+            --primary-hover: #1659ba;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #dbe2ea;
+            --danger-bg: #ffe8e8;
+            --danger-text: #a61b1b;
+            --success-bg: #e8f6ec;
+            --success-text: #1f7a3f;
+            --shadow: 0 10px 30px rgba(31, 41, 55, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #eef4ff 0%, #f7fbff 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 560px;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .title {
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.96rem;
+        }
+
+        .upload-form {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        input[type="file"] {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px;
+            background: #fdfefe;
+            width: 100%;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--primary);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 12px;
+            font-size: 0.94rem;
+        }
+
+        .error {
+            background: var(--danger-bg);
+            color: var(--danger-text);
+            border: 1px solid #ffc9c9;
+        }
+
+        .result {
+            background: var(--success-bg);
+            color: var(--success-text);
+            border: 1px solid #bfeacb;
+            margin-top: 12px;
+        }
+
+        .preview {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .preview img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">Dog Breed Identification</h1>
+        <p class="subtitle">Upload a dog image and get the predicted breed instantly.</p>
+
+        <form class="upload-form" action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required />
+            <button class="btn" type="submit">Predict Breed</button>
+        </form>
+
+        {% if error %}
+            <div class="message error">{{ error }}</div>
+        {% endif %}
+
+        {% if predicted_breed %}
+            <div class="message result">
+                <strong>Predicted Breed:</strong> {{ predicted_breed }}<br />
+            </div>
+        {% endif %}
+
+        {% if uploaded_image %}
+            <div class="preview">
+                <img src="{{ uploaded_image }}" alt="Uploaded Dog Image" />
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>
